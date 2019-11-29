@@ -9,13 +9,15 @@ def index(request):
 def sandbox(request):
     result = Block.objects.filter(tipo_espuma='24-30').count()
     return HttpResponse(result)
-#lista de todos
-    #Block_list = Block.objects.all()
-    #return HttpResponse(Block_list)
+
 
 
 
 #querys probados
+
+#lista de todos
+    #Block_list = Block.objects.all()
+    #return HttpResponse(Block_list)
 
 #--contador de todo block--
 # def sandbox(request):
