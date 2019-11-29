@@ -29,7 +29,7 @@ class Espumado(models.Model):
     largo = models.DecimalField(max_digits=10, decimal_places=2,blank = True, null=True)
     #Ancho
     ancho = models.DecimalField(max_digits=10, decimal_places=2,blank = True, null=True)
-    #Alto
+    #Alto los cilindros no tienen este valor
     alto = models.DecimalField(max_digits=10, decimal_places=2,blank = True, null=True)
     #Flujo de Aire ≥10
     flujo_de_aire = models.IntegerField()
