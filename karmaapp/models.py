@@ -49,7 +49,7 @@ class Espumado(models.Model):
         abstract = True
 
     def __str__(self):
-        return 'Tipo_espuma: {0} lote: {1} num_block: {2}'.format(self.tipo_espuma, self.no_lote,self.num_block)
+        return 'Tipo_espuma: {0} lote: {1} num_block: {2} id: {3}'   .format(self.tipo_espuma, self.no_lote,self.num_block,self.id)
 
 class Block(Espumado):
     pass

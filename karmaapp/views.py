@@ -37,17 +37,37 @@ def tut(request):
     }
     return render(request, 'tut.html',context)
 
-
-def detail_Cilindro(request,item_id):
+def detail(request,item_id):
     item = Cilindro.objects.get(pk=item_id)
-    context ={
+    context = {
         'itemsfront':item,
+        'header':'cilindros'
     }
 
-    return render(request, 'detail.html',context)
+    return render(request,'detail.html',context)
 
-def detail_Block(request,item_id):
-    return HttpResponse("este es el id:  %s" %item_id)
+def detail_cilindro(request,item_id):
+    item = Cilindro.objects.get(pk=item_id)
+    context = {
+        'itemsfront':item,
+        'header':'cilindros'
+    }
+    return render(request,'detail.html',context)
+
+def detail_block(request,item_id):
+    item = Block.objects.get(pk=item_id)
+    context = {
+        'itemsfront':item,
+        'header':'blocks'
+    }
+
+    return render(request,'detail.html',context)
+
+
+    
+
+
+
 
 
 #view para la entrada a peeler
@@ -56,8 +76,8 @@ def peeler_Cilindro_entrada(request,cilindro_num):
     return HttpResponse("id del cilindro: %s" % cilindro_num)
 
 
-def sandbox(request,cilindro_id):
-    result = Cilindro.objects.get(pk=cilindro_id)
+def sandbox(request):
+    result = Block.objects.get(pk=1)
     context ={
         'result':result,
     }
