@@ -82,13 +82,34 @@ def peeler_Cilindro_entrada(request,cilindro_num):
 
 
 def sandbox(request):
-    result = Block.objects.get(pk=1)
+    q1 = Block.objects.all()
+    q2 = Cilindro.objects.all()
+    q1 = q1.union(q2)
+    # context ={
+    #     'result':q1,
+    # }
+    return HttpResponse(q1)
+
+def datatable(request):
+    q1 = Block.objects.all()
+    q2 = Cilindro.objects.all()
+    items = q1.union(q2)
     context ={
-        'result':result,
+        'itemsfront': items,
+        #'header':'cilindros',
     }
-    return HttpResponse(result)
+    return render(request, 'datatable.html',context)
 
 
+def prueba2(request):
+    q1 = Block.objects.all()
+    q2 = Cilindro.objects.all()
+    items = q1.union(q2)
+    context ={
+        'itemsfront': items,
+        #'header':'cilindros',
+    }
+    return render(request, 'datatable2.html',context)
 
 
 #querys probados
@@ -118,3 +139,13 @@ def sandbox(request):
 # }
 # return render(request, 'index.html',context)
 #
+#union de blok y espuma
+# def datatable(request):
+#     q1 = Block.objects.all()
+#     q2 = Cilindro.objects.all()
+#     items = q1.union(q2)
+#     context ={
+#         'itemsfront': items,
+#         #'header':'cilindros',
+#     }
+#     return render(request, 'datatable.html',context)
