@@ -7,7 +7,7 @@ from django.template import loader
 def index(request):
     Block_list = Block.objects.all()
     context ={
-        'Block_list':Block_list,
+        'itemsfront':Block_list,
     }
     return render(request, 'index.html',context)
 
@@ -64,8 +64,13 @@ def detail_block(request,item_id):
     return render(request,'detail.html',context)
 
 
-    
 
+def prueba(request):
+    Block_list = Block.objects.all()
+    context ={
+        'itemsfront':Block_list,
+    }
+    return render(request, 'prueba.html',context)
 
 
 

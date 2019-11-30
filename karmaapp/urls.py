@@ -15,7 +15,7 @@ urlpatterns = [
 
 
 
-
+    path('prueba/',views.prueba,name='prueba'),
     path('peeler_cilindro_entrada/<int:cilindro_num>/',views.peeler_Cilindro_entrada,name='peeler_Cilindro_entrada'),
 
     path('sandbox/',views.sandbox,name='sandbox'),
