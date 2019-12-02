@@ -117,9 +117,16 @@ def prueba2(request):
 
 
 def invsum(request):
-    conteo = Block.objects.filter(tipo_espuma='15-30').count()
+    conteob15_30 = Block.objects.filter(tipo_espuma='15-30').count()
+    conteob24_30 = Block.objects.filter(tipo_espuma='24-30').count()
+    conteoc15_15 = Cilindro.objects.filter(tipo_espuma='15-15').count()
+    conteoc15c6_20 = Cilindro.objects.filter(tipo_espuma='15,6-20').count()
+
     context ={
-        'itemsfront': conteo,
+        'conteob15_30f': conteob15_30,
+        'conteob24_30f': conteob24_30,
+        'conteoc15_15f': conteoc15_15,
+        'conteoc15c6_20f': conteoc15c6_20,
         #'countfront': count,
     }
     #return HttpResponse(result)
