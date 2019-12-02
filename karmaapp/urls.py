@@ -17,6 +17,9 @@ urlpatterns = [
     path('datatable/',views.datatable,name='datatable'),
     path('prueba2/',views.prueba2,name='prueba2'),
 
+    path('invsum/',views.invsum,name='invsum'),
+
+
     path('prueba/',views.prueba,name='prueba'),
     path('peeler_cilindro_entrada/<int:cilindro_num>/',views.peeler_Cilindro_entrada,name='peeler_Cilindro_entrada'),
 

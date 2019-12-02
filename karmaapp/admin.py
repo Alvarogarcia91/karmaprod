@@ -6,6 +6,6 @@ from import_export.admin import ImportExportModelAdmin
 
 
 # admin.site.register(item)
-@admin.register(Desktop, Laptop, Mobile, Block, Cilindro ,Aglutinado)
+@admin.register(Block, Cilindro ,Aglutinado)
 class ViewAdmin(ImportExportModelAdmin):
     pass

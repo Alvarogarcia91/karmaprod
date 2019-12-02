@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from .models import *
 from django.http import HttpResponse
 from django.template import loader
+from django.db.models import *
+from django.db.models import Count
 # Create your views here.
 
 def index(request):
@@ -110,6 +112,20 @@ def prueba2(request):
         #'header':'cilindros',
     }
     return render(request, 'datatable2.html',context)
+
+
+
+
+def invsum(request):
+    conteo = Block.objects.filter(tipo_espuma='15-30').count()
+    context ={
+        'itemsfront': conteo,
+        #'countfront': count,
+    }
+    #return HttpResponse(result)
+    return render(request, 'invsum.html',context)
+
+
 
 
 #querys probados
