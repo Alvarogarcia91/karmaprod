@@ -11,7 +11,7 @@ class Espumado(models.Model):
     #No. Corrida
     num_corrida = models.IntegerField(blank=True, default=1, null=True)
     #No. Block
-    num_block = models.IntegerField(blank=True)
+    num_block = models.IntegerField(blank=False)
     #Tipo Unidad
     tipo_unidad = models.CharField(max_length=200,blank=True)
     #No. Lote
@@ -22,19 +22,19 @@ class Espumado(models.Model):
     #--agregar choices--
     tipo_defecto = models.CharField(max_length=200,blank=True)
     #OK/NG
-    ok_ng = models.CharField(max_length=200)
+    ok_ng = models.CharField(max_length=200,blank=False)
 
     #---Medidas---CAPTURADAS
     #Largo der.
-    largo = models.DecimalField(max_digits=10, decimal_places=2,blank = True, null=True)
+    largo = models.DecimalField(max_digits=10, decimal_places=2,blank = False, null=True)
     #Ancho
-    ancho = models.DecimalField(max_digits=10, decimal_places=2,blank = True, null=True)
+    ancho = models.DecimalField(max_digits=10, decimal_places=2,blank = False, null=True)
     #Alto los cilindros no tienen este valor
     alto = models.DecimalField(max_digits=10, decimal_places=2,blank = True, null=True)
     #Flujo de Aire ≥10
     flujo_de_aire = models.IntegerField()
     #Peso
-    peso = models.DecimalField(max_digits=6, decimal_places=2,blank = True, null=True)
+    peso = models.DecimalField(max_digits=6, decimal_places=2,blank = False, null=True)
     #Volumen
     volumen = models.DecimalField(max_digits=6, decimal_places=2,blank = True, null=True)
     #Densidad

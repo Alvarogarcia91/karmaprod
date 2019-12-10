@@ -153,11 +153,15 @@ def sandbox2(request):
 
 
 def formtest(request):
-    form = FormTest(request.POST or None)
+    if request.method == 'POST':
+        form = FormTest(request.POST or None)
 
-    if form.is_valid():
-        form.save()
-        return redirect('formtest')
+        if form.is_valid():
+            #form.save()
+            pass
+            return redirect('formtest')
+    else:
+        form=FormTest()
 
     return render(request,'formtest.html',{'form':form})
 
