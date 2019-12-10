@@ -24,7 +24,7 @@ class Espumado(models.Model):
     #OK/NG
     ok_ng = models.CharField(max_length=200)
 
-    #---Medidas---
+    #---Medidas---CAPTURADAS
     #Largo der.
     largo = models.DecimalField(max_digits=10, decimal_places=2,blank = True, null=True)
     #Ancho
@@ -44,6 +44,19 @@ class Espumado(models.Model):
     #fecha en db
     #fecha_capturado = models.DateTimeField(auto_now_add=True)
 
+# #---Medidas---CURADAS
+# #Largo der.
+# largo_curado = models.DecimalField(max_digits=10, decimal_places=2,blank = True, null=True)
+# #Ancho
+# ancho_curado = models.DecimalField(max_digits=10, decimal_places=2,blank = True, null=True)
+# #Alto los cilindros no tienen este valor
+# alto_curado = models.DecimalField(max_digits=10, decimal_places=2,blank = True, null=True)
+# #Peso
+# peso_curado = models.DecimalField(max_digits=6, decimal_places=2,blank = True, null=True)
+# #Volumen
+# volumen_curado = models.DecimalField(max_digits=6, decimal_places=2,blank = True, null=True)
+# #Densidad
+# densidad_curado = models.DecimalField(max_digits=6, decimal_places=2,blank = True, null=True)
 
     class Meta:
         abstract = True

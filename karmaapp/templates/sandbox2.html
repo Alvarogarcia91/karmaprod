@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+    <div class="row">
+            <div class="col-lg">
+<br>
+<div class="add_buttons">
+
+    <div class="button-group">
+      <a href="{% url 'sandbox2' %}" class="btn btn-secondary btn-md btn-trim" role="button"> Mostrar Cilindros</a>
+      <a href="#" class="btn btn-success btn-sm btn-pad" role="button"> Capturar Cilindro</a>
+
+    </div>
+</div>
+<br>
+<table class="table table-hover" >
+    <thead>
+      <tr>
+       
+        <th>id</th>
+        <th>tipo_espuma</th>
+        <th>Corrida</th>
+        <th>num block</th>
+        <th>tipo unidad</th>
+        <th>lote</th>
+        <th>Ajuste</th>
+        <th>Defecto</th>
+        <th>OK</th>
+        <th>Largo</th>
+        <th>Ancho</th>
+        <th>Alto</th>
+        <th>F.aire</th>
+        <th>Peso</th>
+        <th>Volumen</th>
+        <th>Densidad</th>
+         <th>Editar</th>
+        
+      </tr>
+    </thead>
+
+    <tbody>
+        {% for item in itemsfront %}
+
+<tr>
+    
+    <td>{{ item.pk }}</td>
+    <td>{{ item.tipo_espuma }}</td>
+    <td>{{ item.num_corrida }}</td>
+    <td>{{ item.num_block }}</td>
+    <td>{{ item.tipo_unidad }}</td>
+    <td>{{ item.no_lote }}</td>
+    <td>{{ item.tipo_ajuste }}</td>
+    <td>{{ item.tipo_defecto }}</td>
+    <td>{{ item.ok_ng }}</td>
+    <td>{{ item.largo }}</td>
+    <td>{{ item.ancho }}</td>
+    <td>{{ item.alto }}</td>
+    <td>{{ item.flujo_de_aire }}</td>
+    <td>{{ item.peso }}</td>
+    <td>{{ item.volumen }}</td>
+    <td>{{ item.densidad }}</td>
+    <td><a href="#" class="btn btn-warning btn-sm" role="button" aria-pressed="true" > Editar</a></tr></td>
+    
+
+        {% endfor %}
+
+        </td>
+
+    </tbody>
+  </table>
+</div>
+</div>
+
+
+{% endblock%}

@@ -15,6 +15,11 @@ urlpatterns = [
 
 
     path('datatable/',views.datatable,name='datatable'),
+    #path para Capturar
+    #path('capturar_block/',views.alta_blocks,name='alta_blocks'),
+    path('capturar_cilindro/',views.alta_cilindro,name='alta_cilindro'),
+
+
     path('prueba2/',views.prueba2,name='prueba2'),
 
     path('invsum/',views.invsum,name='invsum'),
@@ -25,6 +30,8 @@ urlpatterns = [
 
     path('sandbox/',views.sandbox,name='sandbox'),
     path('tut/',views.tut,name='tut'),
-
+    path('sandbox2/',views.sandbox2,name='sandbox2'),
+    
+    path('formtest/',views.formtest,name='formtest'),
     #
 ]

@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from django.template import loader
 from django.db.models import *
 from django.db.models import Count
+from .forms import *
 # Create your views here.
 
 def index(request):
@@ -133,6 +134,32 @@ def invsum(request):
     return render(request, 'invsum.html',context)
 
 
+def alta_cilindro(request):
+    form = CilindroForm(request.POST or None)
+
+    if form.is_valid():
+        form.save()
+        return redirect('alta_cilindro')
+
+    return render(request,'CilindroForm.html',{'form':form})
+
+
+def sandbox2(request):
+    Block_list = Block.objects.all()
+    context ={
+        'itemsfront':Block_list,
+    }
+    return render(request, 'sandbox2.html',context)
+
+
+def formtest(request):
+    form = FormTest(request.POST or None)
+
+    if form.is_valid():
+        form.save()
+        return redirect('formtest')
+
+    return render(request,'formtest.html',{'form':form})
 
 
 #querys probados
