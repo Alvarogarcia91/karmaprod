@@ -40,23 +40,28 @@ class Espumado(models.Model):
     #Densidad
     densidad = models.DecimalField(max_digits=6, decimal_places=2,blank = True, null=True)
     #Metros
+    #flags indicadores
+    auth_corte = models.BooleanField(default = False)
+    dispobible =models.BooleanField(default = True)
 
     #fecha en db
     #fecha_capturado = models.DateTimeField(auto_now_add=True)
 
-# #---Medidas---CURADAS
-# #Largo der.
-# largo_curado = models.DecimalField(max_digits=10, decimal_places=2,blank = True, null=True)
-# #Ancho
-# ancho_curado = models.DecimalField(max_digits=10, decimal_places=2,blank = True, null=True)
-# #Alto los cilindros no tienen este valor
-# alto_curado = models.DecimalField(max_digits=10, decimal_places=2,blank = True, null=True)
-# #Peso
-# peso_curado = models.DecimalField(max_digits=6, decimal_places=2,blank = True, null=True)
-# #Volumen
-# volumen_curado = models.DecimalField(max_digits=6, decimal_places=2,blank = True, null=True)
-# #Densidad
-# densidad_curado = models.DecimalField(max_digits=6, decimal_places=2,blank = True, null=True)
+#---Medidas---CURADAS
+    #Largo der.
+    largo_curado = models.DecimalField(max_digits=10, decimal_places=2,blank = False, null=True)
+    #Ancho
+    ancho_curado = models.DecimalField(max_digits=10, decimal_places=2,blank = False, null=True)
+    #Alto los cilindros no tienen este valor
+    alto_curado = models.DecimalField(max_digits=10, decimal_places=2,blank = True, null=True)
+    #Peso
+    peso_curado = models.DecimalField(max_digits=6, decimal_places=2,blank = False, null=True)
+    #Volumen
+    volumen_curado = models.DecimalField(max_digits=6, decimal_places=2,blank = True, null=True)
+    #Densidad
+    densidad_curado = models.DecimalField(max_digits=6, decimal_places=2,blank = True, null=True)
+    #Metros
+
 
     class Meta:
         abstract = True

@@ -20,6 +20,12 @@ urlpatterns = [
     path('capturar_cilindro/',views.alta_cilindro,name='alta_cilindro'),
 
 
+    #displaybotones
+    path('displaybotones/',views.displaybotones,name='displaybotones'),
+    #capturar Medidas CURADAS
+    path('medidas_curadas/<int:id>/',views.medidas_curadas,name='medidas_curadas'),
+    # path('medidas_curadas/',views.medidas_curadas,name='medidas_curadas'),
+
     path('prueba2/',views.prueba2,name='prueba2'),
 
     path('invsum/',views.invsum,name='invsum'),
@@ -31,7 +37,7 @@ urlpatterns = [
     path('sandbox/',views.sandbox,name='sandbox'),
     path('tut/',views.tut,name='tut'),
     path('sandbox2/',views.sandbox2,name='sandbox2'),
-    
+
     path('formtest/',views.formtest,name='formtest'),
     #
 ]

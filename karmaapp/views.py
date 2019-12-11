@@ -166,6 +166,33 @@ def formtest(request):
     return render(request,'formtest.html',{'form':form})
 
 
+
+#medidas CURADAS
+
+def medidas_curadas(request,id):
+    item = Cilindro.objects.get(id=id)
+    if request.method == 'POST':
+        form = MedidasCuradasForm(request.POST or None, instance = item)
+
+        if form.is_valid():
+            #form.save()
+            pass
+            return redirect('displaybotones')
+    else:
+        form=MedidasCuradasForm()
+
+    return render(request,'MedidasCuradasForm.html',{'form':form,'item':item})
+
+
+
+def displaybotones(request):
+    Block_list = Cilindro.objects.all()
+    context ={
+        'itemsfront':Block_list,
+    }
+    return render(request, 'displaybotones.html',context)
+
+
 #querys probados
 
 #lista de todos
